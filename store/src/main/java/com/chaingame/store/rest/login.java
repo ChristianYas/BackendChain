@@ -10,9 +10,7 @@ import com.chaingame.store.models.Cliente;
 import com.chaingame.store.models.DatosLogin;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/login")

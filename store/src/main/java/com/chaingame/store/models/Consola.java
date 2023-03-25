@@ -5,26 +5,26 @@ import java.util.List;
 public class Consola {
     
     int idConsola;
-    String memoria; 
+    String almacenamiento; 
     boolean control;
     String resolucion; 
-    String capacidad; 
+    String ram; 
     String tipoDeMemoria; 
     Producto producto;
-    List<Foto> listFotos;
+    List<Foto> listaFotos;
 
     public Consola(){}
 
-    public Consola(int idConsola, String memoria, boolean control, String resolucion, String capacidad,
-            String tipoDeMemoria, Producto producto, List<Foto> listFotos) {
+    public Consola(int idConsola, String almacenamiento, boolean control, String resolucion, String ram,
+            String tipoDeMemoria, Producto producto, List<Foto> listaFotos) {
         this.idConsola = idConsola;
-        this.memoria = memoria;
+        this.almacenamiento = almacenamiento;
         this.control = control;
         this.resolucion = resolucion;
-        this.capacidad = capacidad;
+        this.ram = ram;
         this.tipoDeMemoria = tipoDeMemoria;
         this.producto = producto;
-        this.listFotos = listFotos;
+        this.listaFotos = listaFotos;
     }
 
     public int getIdConsola() {
@@ -33,11 +33,11 @@ public class Consola {
     public void setIdConsola(int idConsola) {
         this.idConsola = idConsola;
     }
-    public String getMemoria() {
-        return memoria;
+    public String getAlmacenamiento() {
+        return almacenamiento;
     }
-    public void setMemoria(String memoria) {
-        this.memoria = memoria;
+    public void setAlmacenamiento(String almaenamiento) {
+        this.almacenamiento = almaenamiento;
     }
     public boolean isControl() {
         return control;
@@ -51,11 +51,11 @@ public class Consola {
     public void setResolucion(String resolucion) {
         this.resolucion = resolucion;
     }
-    public String getCapacidad() {
-        return capacidad;
+    public String getRam() {
+        return ram;
     }
-    public void setCapacidad(String capacidad) {
-        this.capacidad = capacidad;
+    public void setRam(String ram) {
+        this.ram = ram;
     }
     public String getTipoDeMemoria() {
         return tipoDeMemoria;
@@ -69,11 +69,11 @@ public class Consola {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
-    public List<Foto> getListFotos() {
-        return listFotos;
+    public List<Foto> getListaFotos() {
+        return listaFotos;
     }
-    public void setListFotos(List<Foto> listFotos) {
-        this.listFotos = listFotos;
+    public void setListaFotos(List<Foto> listaFotos) {
+        this.listaFotos = listaFotos;
     }
 
 

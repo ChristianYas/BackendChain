@@ -11,12 +11,12 @@ public class Control {
     boolean vibracion; 
     boolean bluetooth; 
     Producto producto;
-    List<Foto> listFotos;
+    List<Foto> listaFotos;
 
     public Control(){}
 
     public Control(int idControl, boolean inalambrico, String color, String conectoresDeEntrada, boolean vibracion,
-            boolean bluetooth, Producto producto, List<Foto> listFotos) {
+            boolean bluetooth, Producto producto, List<Foto> listaFotos) {
         this.idControl = idControl;
         this.inalambrico = inalambrico;
         this.color = color;
@@ -24,7 +24,7 @@ public class Control {
         this.vibracion = vibracion;
         this.bluetooth = bluetooth;
         this.producto = producto;
-        this.listFotos = listFotos;
+        this.listaFotos = listaFotos;
     }
 
     public int getIdControl() {
@@ -69,11 +69,11 @@ public class Control {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
-    public List<Foto> getListFotos() {
-        return listFotos;
+    public List<Foto> getListaFotos() {
+        return listaFotos;
     }
-    public void setListFotos(List<Foto> listFotos) {
-        this.listFotos = listFotos;
+    public void setListaFotos(List<Foto> listaFotos) {
+        this.listaFotos = listaFotos;
     }
 
 

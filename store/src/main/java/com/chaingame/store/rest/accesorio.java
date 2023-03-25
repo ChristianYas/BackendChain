@@ -7,27 +7,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chaingame.store.controller.ControllerVideoJuego;
-import com.chaingame.store.models.VideoJuego;
+import com.chaingame.store.controller.ControllerAccesorio;
+import com.chaingame.store.models.Accesorio;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/videoJuego")
+@RequestMapping("/accesorio")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-public class videojuego {
+public class accesorio {
+    
 
     @GetMapping(value="/get")
-    public List<VideoJuego> getVideoJuegos(@RequestParam String plataform, String filter) throws Exception{
-        
-        ControllerVideoJuego cv = new ControllerVideoJuego();
+    public List<Accesorio> getMethodName(@RequestParam String plataform, @RequestParam String filter) throws Exception{
 
-        List<VideoJuego> listVideoJuego = cv.getAll(plataform, filter);
+        ControllerAccesorio ca = new ControllerAccesorio();
 
-        return listVideoJuego;
+        List<Accesorio> listaAccesorios = ca.getAll(plataform, filter);
+
+        return listaAccesorios;
     }
-    
     
 }
