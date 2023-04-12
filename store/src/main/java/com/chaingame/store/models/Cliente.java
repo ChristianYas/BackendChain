@@ -12,12 +12,17 @@ public class Cliente {
     String calle;
     String colonia;
     String pais;
+
+    String telefonoMovil;
+    String telefonoCasa;
+    String email;
+
     String token;
 
     public Cliente(){}
 
     public Cliente(int idCliente, String nombre, String primerApellido, String segundoApellido, int edad,
-            String nombreUsuario, String contrasenia, String calle, String colonia, String pais, String token) {
+            String nombreUsuario, String contrasenia, String calle, String colonia, String pais,             String telefonoMovil,    String telefonoCasa,    String email,            String token) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
@@ -28,6 +33,9 @@ public class Cliente {
         this.calle = calle;
         this.colonia = colonia;
         this.pais = pais;
+        this.telefonoMovil = telefonoMovil;
+        this.telefonoCasa = telefonoCasa;
+        this.email = email;
         this.token = token;
     }
 
@@ -120,4 +128,28 @@ public class Cliente {
     }
 
     
+    public String getTelefonoMovil() {
+        return telefonoMovil;
+    }
+
+    public void setTelefonoMovil(String telefonoMovil) {
+        this.telefonoMovil = telefonoMovil;
+    }
+    
+    public String getTelefonoCasa() {
+        return telefonoCasa;
+    }
+
+    public void setTelefonoCasa(String telefonoCasa) {
+        this.telefonoCasa = telefonoCasa;
+    }
+
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

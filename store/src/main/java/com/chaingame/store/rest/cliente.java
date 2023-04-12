@@ -22,9 +22,9 @@ public class cliente {
         
         ControllerCliente cc = new ControllerCliente();
 
-        boolean validation = cc.insertClient(cliente);
+        String validation = cc.insertClient(cliente);
 
-        return "ok";
+        return validation;
     }
     
 }

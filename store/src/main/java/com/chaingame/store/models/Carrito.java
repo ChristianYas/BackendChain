@@ -4,16 +4,22 @@ public class Carrito {
     
     int idCarrito;
     String fecha;
-    int idcliente;
+    int idCliente;
     int idProducto;
+    int cantidad;
+    int comprado;
+    int onCar;
 
     public Carrito(){}
 
-    public Carrito(int idCarrito, String fecha, int idcliente, int idProducto) {
+    public Carrito(int idCarrito, String fecha, int idCliente, int idProducto, int cantidad, int comprado, int onCar) {
         this.idCarrito = idCarrito;
         this.fecha = fecha;
-        this.idcliente = idcliente;
+        this.idCliente = idCliente;
         this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        this.comprado = comprado;
+        this.onCar = onCar;
     }
 
     public int getIdCarrito() {
@@ -28,11 +34,11 @@ public class Carrito {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    public int getIdcliente() {
-        return idcliente;
+    public int getIdCliente() {
+        return idCliente;
     }
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setIdcliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     public int getIdProducto() {
         return idProducto;
@@ -41,5 +47,24 @@ public class Carrito {
         this.idProducto = idProducto;
     }
     
+    public int getCantidad(){
+        return cantidad;
+    }
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
+    }
 
+    public int getComprado(){
+        return comprado;
+    }
+    public void setComprado(int comprado){
+        this.comprado = comprado;
+    }
+
+    public int getOnCar(){
+        return onCar;
+    }
+    public void setOnCar(int onCar){
+        this.onCar = onCar;
+    }
 }

@@ -46,6 +46,7 @@ public class ControllerConsola {
         p.setDescripcion(rs.getString(7));
         p.setPublicador(rs.getString(8));
         p.setLanzamiento(rs.getString(9));
+        p.setListaFotos(getPhotos(rs.getInt(1)));
 
         Consola c = new Consola();
 
@@ -56,7 +57,6 @@ public class ControllerConsola {
         c.setRam(rs.getString(14));
         c.setTipoDeMemoria(rs.getString(15));
         c.setProducto(p);
-        c.setListaFotos(getPhotos(rs.getInt(1)));
 
         return c;
 

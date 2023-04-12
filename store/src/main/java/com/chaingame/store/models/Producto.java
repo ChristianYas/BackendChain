@@ -1,5 +1,7 @@
 package com.chaingame.store.models;
 
+import java.util.List;
+
 public class Producto {
  
     int idProducto;
@@ -11,11 +13,12 @@ public class Producto {
     String descripcion; 
     String publicador; 
     String lanzamiento;
+    List<Foto> listaFotos;
 
     public Producto(){}
 
     public Producto(int idProducto, String titulo, float precio, String condicion, String plataforma, String garantia,
-            String descripcion, String publicador, String lanzamiento) {
+            String descripcion, String publicador, String lanzamiento, List<Foto> listaFotos) {
         this.idProducto = idProducto;
         this.titulo = titulo;
         this.precio = precio;
@@ -25,7 +28,9 @@ public class Producto {
         this.descripcion = descripcion;
         this.publicador = publicador;
         this.lanzamiento = lanzamiento;
+        this.listaFotos = listaFotos;
     }
+
     public int getIdProducto() {
         return idProducto;
     }
@@ -81,5 +86,12 @@ public class Producto {
         this.lanzamiento = lanzamiento;
     } 
 
+    
+    public List<Foto> getListaFotos() {
+        return listaFotos;
+    }
+    public void setListaFotos(List<Foto> listaFotos) {
+        this.listaFotos = listaFotos;
+    }
 
 }

@@ -44,6 +44,7 @@ public class ControllerVideoJuego {
         p.setDescripcion(rs.getString(7));
         p.setPublicador(rs.getString(8));
         p.setLanzamiento(rs.getString(9));
+        p.setListaFotos(getPhotos(rs.getInt(1)));
 
         VideoJuego vj = new VideoJuego();
 
@@ -53,7 +54,6 @@ public class ControllerVideoJuego {
         vj.setGenero(rs.getString(13));
         vj.setTrailer(rs.getString(14));
         vj.setProducto(p);
-        vj.setListaFotos(getPhotos(rs.getInt(1)));
 
         return vj;
     }

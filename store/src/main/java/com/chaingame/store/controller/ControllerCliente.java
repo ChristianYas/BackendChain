@@ -8,13 +8,14 @@ import java.sql.*;
 public class ControllerCliente {
  
     
-    public boolean insertClient(Cliente cliente) throws Exception{
+    public String insertClient(Cliente cliente){
 
-        boolean validation = false;
+        Boolean validation = false;
 
+        try{
         Connection con = new ConnectionMySQL().getConnection();
 
-        String sql = "CALL insertClient(?,?,?,?,?,?,?,?,?,?)";
+        String sql = "CALL insertClient(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         CallableStatement cstmt = con.prepareCall(sql);
 
@@ -28,12 +29,17 @@ public class ControllerCliente {
         cstmt.setString(8, cliente.getColonia());
         cstmt.setString(9, cliente.getPais());
         cstmt.setString(10, "token");
+        cstmt.setString(11, cliente.getTelefonoMovil());
+        cstmt.setString(12, cliente.getTelefonoCasa());
+        cstmt.setString(13, cliente.getEmail());
 
-        validation = cstmt.execute();
-
-        return validation;
-
-        
+        cstmt.execute();
+        validation = true;
+        } catch (Exception e){
+            e.printStackTrace();
+            validation = false;
+        }
+        return validation.toString();
     }
 
 }

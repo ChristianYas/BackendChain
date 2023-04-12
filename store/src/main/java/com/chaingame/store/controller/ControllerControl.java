@@ -46,6 +46,7 @@ public class ControllerControl {
         p.setDescripcion(rs.getString(7));
         p.setPublicador(rs.getString(8));
         p.setLanzamiento(rs.getString(9));
+        p.setListaFotos(getPhotos(rs.getInt(1)));
 
         Control c = new Control();
 
@@ -56,7 +57,6 @@ public class ControllerControl {
         c.setVibracion(rs.getBoolean(14));
         c.setBluetooth(rs.getBoolean(15));
         c.setProducto(p);
-        c.setListaFotos(getPhotos(rs.getInt(1)));
 
         return c;
 

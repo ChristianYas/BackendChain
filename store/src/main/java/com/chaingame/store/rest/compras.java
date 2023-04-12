@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chaingame.store.controller.ControllerCompras;
 import com.chaingame.store.models.Carrito;
+import com.chaingame.store.models.Compra;
 import com.chaingame.store.models.Historial;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,9 +30,9 @@ public class compras {
         
         ControllerCompras cc = new ControllerCompras();
 
-        cc.addShoppingCar(carrito);
+        String valid = cc.addShoppingCar(carrito);
         
-        return "ok";
+        return valid;
     }
     
     @GetMapping(value="/getShoppingCars")
@@ -46,4 +47,23 @@ public class compras {
         return listaCarritos;
     }
     
+    @PostMapping(value="/addCompra")
+    public String postMethodName(@RequestBody Compra compra) throws Exception{
+        
+        ControllerCompras cc = new ControllerCompras();
+
+        String valid = cc.addCompra(compra);
+        
+        return valid;
+    }
+
+    @GetMapping(value="/removeShoppingCar")
+    public String postMethodName(@RequestParam int idCarrito) throws Exception{
+       
+        ControllerCompras cc = new ControllerCompras();
+
+        String response = cc.deleteShoppingCar(idCarrito);
+
+        return response;
+    }
 }

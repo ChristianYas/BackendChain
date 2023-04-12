@@ -48,13 +48,13 @@ public class ControllerAccesorio {
         p.setDescripcion(rs.getString(7));
         p.setPublicador(rs.getString(8));
         p.setLanzamiento(rs.getString(9));
+        p.setListaFotos(getPhotos(rs.getInt(1)));
 
         Accesorio a = new Accesorio();
 
         a.setIdAccesorio(rs.getInt(10));
         a.setMaterial(rs.getString(11));
         a.setProducto(p);
-        a.setListFotos(getPhotos(rs.getInt(1)));
 
         return a;
 
