@@ -34,6 +34,8 @@ public class compras {
         
         return valid;
     }
+
+
     
     @GetMapping(value="/getShoppingCars")
     public List<Historial> getMethodName(@RequestParam String idCliente) throws Exception{
@@ -65,5 +67,18 @@ public class compras {
         String response = cc.deleteShoppingCar(idCarrito);
 
         return response;
+    }
+
+    
+    @GetMapping(value="/getBoughts")
+    public List<Compra> getMethodName(@RequestParam int idCliente) throws Exception{
+       
+        List<Compra> listaCompras = new ArrayList<>();
+       
+        ControllerCompras cc = new ControllerCompras();
+
+        listaCompras = cc.getAllCompras(idCliente);
+
+        return listaCompras;
     }
 }

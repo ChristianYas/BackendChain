@@ -65,7 +65,8 @@ public class ControllerCompras {
 
         Connection con = new ConnectionMySQL().getConnection();
 
-        String sql = "SELECT * FROM vista_carrito WHERE idCliente = ' " + idCliente + " ' and comprado = 0 and onCar = 1";
+        String sql = "SELECT * FROM vista_carrito WHERE idCliente = ' " + idCliente
+                + " ' and comprado = 0 and onCar = 1";
 
         PreparedStatement pstmt = con.prepareStatement(sql);
 
@@ -139,20 +140,63 @@ public class ControllerCompras {
         String verificacion;
         try {
             String query = "UPDATE carrito SET onCar = 0 WHERE idCarrito = ?";
-            
+
             Connection con = new ConnectionMySQL().getConnection();
 
             PreparedStatement pstmt = con.prepareStatement(query);
-            
+
             pstmt.setInt(1, idCarrito);
 
             pstmt.execute();
-            
+
             verificacion = "ok";
         } catch (Exception e) {
             e.printStackTrace();
             verificacion = e.toString();
         }
         return verificacion.toString();
+    }
+
+    public List<Compra> getAllCompras(int idCliente) {
+        List<Compra> listCompras = new ArrayList<>();
+
+        String query = "select * from compra where idCliente = " + idCliente;
+
+        try {
+
+            Connection con = new ConnectionMySQL().getConnection();
+            PreparedStatement pstmt;
+            pstmt = con.prepareStatement(query);
+            
+            ResultSet rs = pstmt.executeQuery(query);
+
+            while (rs.next()) {
+
+                listCompras.add(fillCompra(rs));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listCompras;
+
+    }
+    public Compra fillCompra(ResultSet rs) throws SQLException{
+        Compra compra = new Compra();
+
+        compra.setIdCompra(rs.getInt("idCompra"));
+        compra.setCantidad(rs.getInt("cantidad"));
+        compra.setPrecioUnitario(rs.getFloat("precioUnitario"));
+        compra.setLatitud(rs.getFloat("latitud"));
+        compra.setLongitud(rs.getFloat("longitud"));
+        compra.setIdCarrito(rs.getInt("idCarrito"));
+        compra.setFecha(rs.getString("fecha"));
+        compra.setIdCliente(rs.getInt("idCliente"));
+        compra.setIdProducto(rs.getInt("idProducto"));
+
+        return compra;
+
     }
 }

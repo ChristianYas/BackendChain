@@ -18,11 +18,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class cliente {
     
     @PostMapping(value="/insertar")
-    public String postMethodName(@RequestBody Cliente cliente) throws Exception{
+    public String insert(@RequestBody Cliente cliente) throws Exception{
         
         ControllerCliente cc = new ControllerCliente();
 
         String validation = cc.insertClient(cliente);
+
+        return validation;
+    }
+
+    @PostMapping(value="/actualizar")
+    public String update(@RequestBody Cliente cliente) throws Exception{
+        ControllerCliente cc = new ControllerCliente();
+
+        String validation = cc.updateCliente(cliente);
 
         return validation;
     }
