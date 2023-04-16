@@ -63,7 +63,10 @@ public class ControllerLoginn {
             c.setCalle(rs.getString(8));
             c.setColonia(rs.getString(9));
             c.setPais(rs.getString(10));
-            c.setToken(rs.getString(11));
+            c.setTelefonoMovil(rs.getString("telefonoMovil"));
+            c.setTelefonoCasa(rs.getString("telefonoCasa"));
+            c.setEmail(rs.getString("email"));
+            c.setToken(rs.getString("token"));
         }
 
         return c;
