@@ -10,12 +10,12 @@ public class Compra {
     int idCarrito;
     String fecha;
     int idCliente;
-    int idProducto;
+    Producto producto;
 
     public Compra(){}
 
     public Compra(int idCompra, int cantidad, float precioUnitario, float latitud, float longitud, int idCarrito,
-            String fecha, int idCliente, int idProducto) {
+            String fecha, int idCliente, Producto producto) {
         this.idCompra = idCompra;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
@@ -24,7 +24,7 @@ public class Compra {
         this.idCarrito = idCarrito;
         this.fecha = fecha;
         this.idCliente = idCliente;
-        this.idProducto = idProducto;
+        this.producto = producto;
     }
 
     public int getIdCompra() {
@@ -78,11 +78,11 @@ public class Compra {
     }
 
     
-    public int getIdProducto() {
-        return idProducto;
+    public Producto getProducto() {
+        return producto;
     }
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
 }

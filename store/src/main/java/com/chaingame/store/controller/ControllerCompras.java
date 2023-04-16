@@ -160,7 +160,7 @@ public class ControllerCompras {
     public List<Compra> getAllCompras(int idCliente) {
         List<Compra> listCompras = new ArrayList<>();
 
-        String query = "select * from compra where idCliente = " + idCliente;
+        String query = "select * from vista_historial where idCliente = " + idCliente;
 
         try {
 
@@ -183,9 +183,21 @@ public class ControllerCompras {
         return listCompras;
 
     }
-    public Compra fillCompra(ResultSet rs) throws SQLException{
-        Compra compra = new Compra();
+    public Compra fillCompra(ResultSet rs) throws Exception{
 
+        Producto p = new Producto();
+        p.setIdProducto(rs.getInt("idProducto"));
+        p.setTitulo(rs.getString("titulo"));
+        p.setPrecio(rs.getFloat("precio"));
+        p.setCondicion(rs.getString("condicion"));
+        p.setPlataforma(rs.getString("plataforma"));
+        p.setGarantia(rs.getString("garantia"));
+        p.setDescripcion(rs.getString("descripcion"));
+        p.setPublicador(rs.getString("publicador"));
+        p.setLanzamiento(rs.getString("lanzamiento"));
+        p.setListaFotos(getPhotos(rs.getInt("idProducto")));
+
+        Compra compra = new Compra();
         compra.setIdCompra(rs.getInt("idCompra"));
         compra.setCantidad(rs.getInt("cantidad"));
         compra.setPrecioUnitario(rs.getFloat("precioUnitario"));
@@ -194,9 +206,10 @@ public class ControllerCompras {
         compra.setIdCarrito(rs.getInt("idCarrito"));
         compra.setFecha(rs.getString("fecha"));
         compra.setIdCliente(rs.getInt("idCliente"));
-        compra.setIdProducto(rs.getInt("idProducto"));
+        compra.setProducto(p);
 
         return compra;
 
     }
+    
 }
