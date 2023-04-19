@@ -24,7 +24,7 @@ public class cliente {
 
         String validation = cc.insertClient(cliente);
 
-        return validation;
+        return "validation";
     }
 
     @PostMapping(value="/actualizar")

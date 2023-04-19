@@ -54,9 +54,11 @@ public class compras {
         
         ControllerCompras cc = new ControllerCompras();
 
+        System.out.println(compra.getProducto().getIdProducto());
+
         String valid = cc.addCompra(compra);
         
-        return valid;
+        return "as";
     }
 
     @GetMapping(value="/removeShoppingCar")

@@ -34,17 +34,19 @@ public class ControllerCompras {
 
     public String addCompra(Compra compra) throws Exception {
         Boolean validation = false;
-        String query = "call InsertarCompra (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "call InsertarCompra (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection con = new ConnectionMySQL().getConnection();
         CallableStatement cstmt = con.prepareCall(query);
         try {
-            cstmt.setInt(1, compra.getCantidad());
-            cstmt.setDouble(2, compra.getPrecioUnitario());
-            cstmt.setDouble(3, compra.getLatitud());
-            cstmt.setDouble(4, compra.getLongitud());
-            cstmt.setString(5, compra.getFecha());
-            cstmt.setInt(6, compra.getIdCliente());
-            cstmt.setInt(7, compra.getIdProducto());
+            cstmt.setInt(1, compra.getIdCompra());
+            cstmt.setDouble(2, compra.getCantidad());
+            cstmt.setDouble(3, compra.getPrecioUnitario());
+            cstmt.setDouble(4, compra.getLatitud());
+            cstmt.setDouble(5, compra.getLongitud());
+            cstmt.setInt(6, compra.getIdCarrito());
+            cstmt.setString(7, compra.getFecha());
+            cstmt.setInt(8, compra.getIdCliente());
+            cstmt.setInt(9, compra.getProducto().getIdProducto());
             if (compra.getIdCarrito() > 0)
                 cstmt.setInt(8, compra.getIdCarrito());
             else

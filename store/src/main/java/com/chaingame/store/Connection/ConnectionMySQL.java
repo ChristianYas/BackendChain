@@ -12,7 +12,7 @@ public class ConnectionMySQL {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection con = DriverManager.getConnection(uriLocal, "root", "root");
+        Connection con = DriverManager.getConnection(uriLocal, "exece", "");
 
         return con;
 
